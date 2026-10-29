@@ -2381,7 +2381,10 @@ s16 render_pause_screen(void) {
             break;
 
         case MENU_STATE_PAUSE_SCREEN_COURSE:
-            shade_screen();
+        #ifdef DECEMBER
+		#else
+			shade_screen();
+		#endif
             render_pause_my_score_coins();
             render_pause_red_coins();
 
@@ -2412,7 +2415,10 @@ s16 render_pause_screen(void) {
             break;
 
         case MENU_STATE_PAUSE_SCREEN_CASTLE:
-            shade_screen();
+        #ifdef DECEMBER
+		#else
+			shade_screen();
+		#endif
             print_hud_pause_colorful_str();
             render_pause_castle_menu_box(160, 143);
             render_pause_castle_main_strings(104, 60);
